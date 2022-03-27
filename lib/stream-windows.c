@@ -93,8 +93,8 @@ create_snpipe(char *path)
 {
     return CreateFile(path, GENERIC_READ | GENERIC_WRITE, 0, NULL,
                       OPEN_EXISTING,
-                      FILE_ATTRIBUTE_NORMAL | FILE_FLAG_OVERLAPPED |
-                      FILE_FLAG_NO_BUFFERING,
+                      FILE_FLAG_OVERLAPPED | SECURITY_SQOS_PRESENT |
+                      SECURITY_ANONYMOUS,
                       NULL);
 }
 
