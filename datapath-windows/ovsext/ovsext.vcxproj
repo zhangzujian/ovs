@@ -377,6 +377,9 @@
     <Inf>
       <TimeStamp Condition="'$(Configuration)|$(Platform)'=='Win10 Release|x64'">$(Version)</TimeStamp>
     </Inf>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA256</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions.c" />
