@@ -1240,6 +1240,10 @@ nx_put_raw(struct ofpbuf *b, enum ofp_version oxm, const struct match *match,
         }
     }
 
+    /* Packet priority for QoS. */
+    nxm_put_32m(&ctx, MFF_SKB_PRIORITY, oxm, htonl(flow->skb_priority),
+                htonl(match->wc.masks.skb_priority));
+
     /* Packet mark. */
     nxm_put_32m(&ctx, MFF_PKT_MARK, oxm, htonl(flow->pkt_mark),
                 htonl(match->wc.masks.pkt_mark));

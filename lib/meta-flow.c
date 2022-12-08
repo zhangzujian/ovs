@@ -1823,6 +1823,7 @@ mf_is_pipeline_field(const struct mf_field *mf)
     case MFF_METADATA:
     case MFF_IN_PORT:
     case MFF_IN_PORT_OXM:
+    case MFF_SKB_PRIORITY:
     CASE_MFF_REGS:
     CASE_MFF_XREGS:
     CASE_MFF_XXREGS:
@@ -1835,7 +1836,6 @@ mf_is_pipeline_field(const struct mf_field *mf)
     case MFF_TUN_TTL:
     case MFF_TUN_TOS:
     case MFF_ACTSET_OUTPUT:
-    case MFF_SKB_PRIORITY:
     case MFF_PKT_MARK:
     case MFF_CT_STATE:
     case MFF_CT_ZONE:
