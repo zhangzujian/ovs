@@ -4800,6 +4800,10 @@ queue_ids_include(const struct ovsdb_datum *queues, int64_t target)
 static void
 iface_configure_qos(struct iface *iface, const struct ovsrec_qos *qos)
 {
+    if (smap_get_bool(&iface->port->cfg->other_config, "disable_qos", false)) {
+        return;
+    }
+
     struct ofpbuf queues_buf;
 
     ofpbuf_init(&queues_buf, 0);
